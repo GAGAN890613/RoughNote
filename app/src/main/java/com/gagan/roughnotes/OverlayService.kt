@@ -51,7 +51,7 @@ class OverlayService: Service() {
   listOf("Pen","Line","Oval","Undo","Clear").forEachIndexed{idx,s->tools.addView(button(s){pad?.mode=idx.coerceAtMost(2);if(idx==3)pad?.undo();if(idx==4)pad?.clear()})}
   root.addView(tools)
   val colors=LinearLayout(this).apply{orientation=LinearLayout.HORIZONTAL;gravity=Gravity.CENTER}
-  listOf(0xfff8fafc.toInt(),0xff111827.toInt(),0xffef4444.toInt(),0xff3b82f6.toInt(),0xff22c55e.toInt(),0xfff59e0b.toInt(),0xffa855f7.toInt()).forEach{c->addView(button("●"){pad?.ink=c}.apply{setTextColor(c);textSize=21f})}
+  listOf(0xfff8fafc.toInt(),0xff111827.toInt(),0xffef4444.toInt(),0xff3b82f6.toInt(),0xff22c55e.toInt(),0xfff59e0b.toInt(),0xffa855f7.toInt()).forEach{c->colors.addView(button("●"){pad?.ink=c}.apply{setTextColor(c);textSize=21f})}
   colors.addView(button("Glass"){alpha=if(alpha==0x30)0x18 else if(alpha==0x18)0x60 else 0x30;root.background=GradientDrawable().apply{cornerRadius=dp(14).toFloat();setColor((alpha shl 24) or 0x0010182b);setStroke(dp(1),0x8860a5fa.toInt())}})
   root.addView(HorizontalScrollView(this).apply{isHorizontalScrollBarEnabled=false;addView(colors)})
   pad=Pad(this);root.addView(pad,LinearLayout.LayoutParams(-1,0,1f))
