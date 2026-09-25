@@ -42,7 +42,7 @@ class OverlayService: Service() {
  private fun open(){
   val root=LinearLayout(this).apply{orientation=LinearLayout.VERTICAL;setPadding(dp(7),dp(5),dp(7),dp(7));background=GradientDrawable().apply{cornerRadius=dp(14).toFloat();setColor((alpha shl 24) or 0x0010182b);setStroke(dp(1),0x8860a5fa.toInt())}}
   val header=LinearLayout(this).apply{orientation=LinearLayout.HORIZONTAL;gravity=Gravity.CENTER_VERTICAL}
-  header.addView(TextView(this).apply{text="ROUGHNOTES";textSize=14f;setTextColor(-1)},LinearLayout.LayoutParams(0,dp(42),1f))
+  header.addView(TextView(this).apply{text="USE EVERY CORNER";textSize=14f;setTextColor(-1)},LinearLayout.LayoutParams(0,dp(42),1f))
   fun button(s:String,fn:()->Unit)=TextView(this).apply{text=s;textSize=12f;gravity=Gravity.CENTER;setTextColor(-1);setPadding(dp(8),dp(6),dp(8),dp(6));setOnClickListener{fn()}}
   val nanoBtn=button("Nano"){nano=!nano;full=false;resize()}
   val fullBtn=button("Full"){full=!full;nano=false;resize()}
