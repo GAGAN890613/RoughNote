@@ -1,6 +1,6 @@
-# RoughNotes
+# UseEveryCorner
 
-Fresh Android floating scratchpad project.
+Android floating scratchpad project, now branded UseEveryCorner.
 
 - Draggable floating pen bubble, tap to open/close pad.
 - Translucent panel, full-screen and Nano modes.
